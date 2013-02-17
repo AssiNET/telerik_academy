@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Windows Calculator in Programmer View</title>
+        <style>
+            body, section, div, ul, li, label {
+                margin:0;
+                padding:0;
+            }
+            
+            body {
+                font-family:'Segoe UI', sans-serif;
+                font-size: 11px;
+            } 
+
+            input[type="text"], #binary-representation {
+                font-family: Consolas, sans-serif;
+            }
+
+            input[type="text"] {
+                padding:0 5px 0 0;
+                margin: 10px 10px 5px 10px;
+                font-size: 24px;
+                width: 380px;
+                height: 43px;
+                direction:rtl;
+                border: 1px solid #a7a7a7;
+                border-radius: 2px;
+                background: -webkit-linear-gradient(#E6EFFB, #FFFFFF);
+                background:    -moz-linear-gradient(#E6EFFB, #FFFFFF);
+                background:      -o-linear-gradient(#E6EFFB, #FFFFFF);
+                background:         linear-gradient(#E6EFFB, #FFFFFF);
+                color: #434341;
+            }
+
+            #binary-representation {
+                margin: 0 10px 5px 10px;
+                border: 1px solid #a7a7a7;
+                border-radius: 2px;
+                width: 385px;
+                font-size: 13px;
+            }
+
+                #binary-representation .row li {
+                    display:inline;
+                    padding: 0 13px 0 0;
+                }
+
+                #binary-representation .row li:first-child {
+                    padding-left: 6px;
+                }
+
+                #binary-representation .row li:last-child {
+                    padding-right: 6px;
+                }
+
+                #binary-representation .bit-number li {
+                    list-style-type:none;
+                    display:inline;
+                    color:#666; 
+                }
+
+                #binary-representation .bit-number li:first-child {
+                    padding: 0 171px 0 6px;
+                }
+
+                #binary-representation .bit-number li:last-child {
+                    padding: 0 6px 0 138px;
+                }
+
+                #binary-representation .bit-number:last-child li:last-child {
+                    padding: 0 6px 0 143px;
+                }
+
+            #calculator {
+                border: 1px solid #B0BECF;
+                width: 407px;
+                margin: 10px; 
+                padding-bottom: 6px;
+                background: #ecf3fc; /* Old browsers */
+                /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+                background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VjZjNmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI0JSIgc3RvcC1jb2xvcj0iI2Q5ZTRmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkOWU0ZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+                background: -moz-linear-gradient(top,  #ecf3fc 0%, #d9e4f1 24%, #d9e4f1 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ecf3fc), color-stop(24%,#d9e4f1), color-stop(100%,#d9e4f1)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top,  #ecf3fc 0%,#d9e4f1 24%,#d9e4f1 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top,  #ecf3fc 0%,#d9e4f1 24%,#d9e4f1 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top,  #ecf3fc 0%,#d9e4f1 24%,#d9e4f1 100%); /* IE10+ */
+                background: linear-gradient(to bottom,  #ecf3fc 0%,#d9e4f1 24%,#d9e4f1 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecf3fc', endColorstr='#d9e4f1',GradientType=0 ); /* IE6-8 */
+                color: #1E395B; 
+            }
+
+            #menu {
+                border-bottom: 1px solid #a7a7a7;
+                padding: 2px 0 2px 5px;
+                background: -webkit-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+                background:    -moz-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+                background:      -o-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+                background:         linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+            }
+
+                #menu li {
+                    display:inline;
+                    padding-right: 10px;
+                }
+
+                #menu li a {
+                    text-decoration:none;
+                    color: #000;
+                }
+
+                #menu li a:hover {
+                    border: 1px solid #a7a7a7;
+                    border-radius: 2px;
+                }
+
+                #menu li span {
+                    text-decoration:underline;
+                }
+            
+            #radio-buttons {
+                width: 73px;
+                padding: 0;
+                margin: 0 5px 10px 10px;
+                float:left;
+            }
+
+            #radio-buttons ul {
+                border: 1px solid #94A3B6;
+                border-radius: 2px;
+                padding: 9px 2px 10px 2px;
+            }
+
+            #radio-buttons li {
+                list-style-type:none;
+            }
+
+            #radio-buttons li label {
+                margin: 0;
+                padding:0;
+            }
+            
+            #radio-buttons ul:first-child {
+                margin: 0 0 5px 0;
+            }
+
+            #buttons {
+                width: 309px;
+                margin-left: 88px;
+            }
+
+            #buttons div {
+                width: 309px;
+            }
+            
+            #buttons div input:last-child {
+                margin-right:0;
+            }
+
+            #buttons input {
+                border: 1px solid #8797AA;
+                border-radius: 2px;
+                font-family:'Segoe UI';
+                font-size:11px;
+                width: 36px;
+                height: 27px;
+                padding: 0;
+                margin: 0 0 5px 0;
+                background: -webkit-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+                background:    -moz-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+                background:      -o-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+                background:         linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+                color: #1E395B;
+            }
+
+            #buttons input:not(.big) {
+                margin-top:0;
+            }
+
+            #buttons input:disabled {
+                border-color: #B4C2D1;
+                background: #D9E4F1;
+            }
+
+            #buttons input.big {
+                background: -webkit-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+                background:    -moz-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+                background:      -o-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+                background:         linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+                font-size: 14px;
+            }
+
+            #buttons input:hover, #buttons input:focus {
+                border-color: #F5D50F;
+                background: -webkit-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+                background:    -moz-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+                background:      -o-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+                background:         linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+            }
+
+            #buttons div input#double-width {
+                width:75px;
+            }
+
+            #buttons input#double-height {
+                position:absolute;
+                height:60px;
+                margin:0 0 0 273px;
+                top: 287px;
+            }
+
+            #buttons div:last-child {
+                margin-right: 10px; 
+                border: 1px solid #000;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form id="calculator">
+            <section id="menu">
+                <ul>
+                    <li><a href="#"><span>V</span>iew</a></li>
+                    <li><a href="#"><span>E</span>dit</a></li>
+                    <li><a href="#"><span>H</span>elp</a></li>
+                </ul>
+            </section>
+            <input type="text" value="8854455" />
+            <section id="binary-representation">
+                <ul class="row">
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                </ul>
+                <ul class="bit-number">
+                    <li>63</li>
+                    <li>47</li>
+                    <li>32</li>
+                </ul>
+                <ul class="row">
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>1000</li>
+                    <li>0010</li>
+                    <li>1000</li>
+                    <li>0111</li>
+                    <li>1101</li>
+                    <li>0111</li>
+                </ul>
+                <ul class="bit-number">
+                    <li>31</li>
+                    <li>15</li>
+                    <li>0</li>
+                </ul>
+            </section>
+            <section id="radio-buttons">
+                <ul>
+                    <li><input id="hex" type="radio" /><label for="hex">Hex</label></li>
+                    <li><input id="dec" type="radio" checked /><label for="dec">Dec</label></li>
+                    <li><input id="oct" type="radio" /><label for="oct">Oct</label></li>
+                    <li><input id="bin" type="radio" /><label for="bin">Bin</label></li>
+                </ul>
+                <ul>
+                    <li><input id="qword" type="radio" checked /><label for="qword">Qword</label></li>
+                    <li><input id="dword" type="radio" /><label for="dword">Dword</label></li>
+                    <li><input id="word" type="radio" /><label for="word">Word</label></li>
+                    <li><input id="byte" type="radio" /><label for="byte">Byte</label></li>
+                </ul>
+            </section>
+            <section id="buttons">
+                <div>
+                    <input type="button" value=" " disabled="disabled"/>
+                    <input type="button" value="Mod" />
+                    <input type="button" value="A" disabled="disabled"/>
+                    <input type="button" value="MC" />
+                    <input type="button" value="MR" />
+                    <input type="button" value="MS" />
+                    <input type="button" value="M+" />
+                    <input type="button" value="M-" />
+                </div>
+                <div>
+                    <input type="button" value="(" />
+                    <input type="button" value=")" />
+                    <input type="button" value="B" disabled="disabled"/>
+                    <input type="button" value="&larr;" />
+                    <input type="button" value="CE" />
+                    <input type="button" value="C" />
+                    <input type="button" value="±" />
+                    <input type="button" value="√" disabled="disabled"/>
+                </div>
+                <div>
+                    <input type="button" value="RoL" />
+                    <input type="button" value="RoR" />
+                    <input type="button" value="C" disabled="disabled" />
+                    <input class="big" type="button" value="7" />
+                    <input class="big" type="button" value="8" />
+                    <input class="big" type="button" value="9" />
+                    <input type="button" value="/" />
+                    <input type="button" value="%" disabled="disabled"/>
+                </div>
+                <div>
+                    <input type="button" value="Or" />
+                    <input type="button" value="Xor" />
+                    <input type="button" value="D" disabled="disabled" />
+                    <input class="big" type="button" value="4" />
+                    <input class="big" type="button" value="5" />
+                    <input class="big" type="button" value="6" />
+                    <input type="button" value="*" />
+                    <input type="button" value="1/x" disabled="disabled"/>
+                </div>
+                <div>
+                    <input type="button" value="Lsh" />
+                    <input type="button" value="Rsh" />
+                    <input type="button" value="E" disabled="disabled"/>
+                    <input class="big" type="button" value="1" />
+                    <input class="big" type="button" value="2" />
+                    <input class="big" type="button" value="3" />
+                    <input type="button" value="-" />
+                    
+                </div>
+                <div id="lastrow">
+                    <input type="button" value="Not" />
+                    <input type="button" value="And" />
+                    <input type="button" value="F" disabled="disabled"/>
+                    <input class="big" id="double-width" type="button" value="0" />
+                    <input type="button" value="," />
+                    <input type="button" value="+" />
+                </div>
+                <input id="double-height" type="button" value="=" />
+            </section>
+        </form>
+    </body>
+</html>

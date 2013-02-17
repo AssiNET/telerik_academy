@@ -1,0 +1,17 @@
+body {
+    padding-left: 10px;
+    padding-right: 100px;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    border: 2px solid red;
+    border-radius: 105px;
+    width: 90%;
+}
+
+#hide {
+    display:none;
+}

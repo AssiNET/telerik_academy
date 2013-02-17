@@ -1,0 +1,60 @@
+﻿body 
+{
+    padding: 0;
+    margin: 0;
+    color: #060a5c;
+    background-color: #8dc7f1;
+}
+
+#menu {
+   float:left;
+   width:100%;
+   overflow:hidden;
+   position:relative;
+   padding-bottom: 35px;
+}
+#menu ul {
+   clear:left;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   left:50%;
+   text-align:center;
+}
+#menu ul li {
+   float:left;
+   list-style:none;
+   margin:5px 0 0 0;
+   padding:0;
+   position:relative;
+   right:50%;
+   width: 175px;
+}
+
+hr {
+    width: 98%;
+    height: 0;
+    border: 1px thin grey;
+}
+
+h1 {
+    margin: 11px 0 10px 11px;
+    font-style: italic;
+}
+
+#friends ul {
+    list-style-type:none;
+}
+
+#profile-info {
+    list-style-type:none;
+    margin:0 0 0 -30px;
+}
+
+img {
+    margin: 11px 0 10px 11px;
+    width: 240px;
+    height:240px;
+}

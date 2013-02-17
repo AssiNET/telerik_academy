@@ -1,0 +1,120 @@
+.clearfix {
+            -ms-zoom: 1;
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content: "";
+            display:block;
+            clear:both;
+            height:0;
+        }
+
+        body, section, header, nav, ul, li, a, h1, img, aside, form, label, input {
+            padding:0;
+            margin:0;
+        }
+
+        body {
+            text-align:center;
+        }
+
+        #wrapper {
+            padding: 10px;
+            margin: 10px auto 0 auto;
+            border: 1px solid #000;
+            border-radius: 5px;
+            display:inline-block;
+            font-family:calibri;
+            text-align:left;
+        }
+
+        #wrapper > header {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        #wrapper nav {
+            text-align:center;
+            border-bottom: 1px solid #000;
+        }
+
+        #wrapper ul {
+            list-style-type:none;
+        }
+
+        #wrapper nav ul {
+            display:inline-block;
+        }
+
+        #wrapper nav ul li {
+            float:left;
+            margin-right: 10px;
+        }
+
+        #wrapper nav ul li:last-of-type {
+            margin-right: 0;
+        }
+
+        #wrapper a {
+            color: #00abf0;
+            font-size: 20px;
+            padding: 5px 0 5px 0;
+            font-weight:bold;
+        }
+
+        #notebooks {
+            float:left;
+            border: 1px solid #000;
+            padding: 10px 5px 10px 5px;
+        }
+
+        .row:not(:last-of-type) {
+            margin-bottom: 15px;
+        }
+
+        .cell {
+            float:left;
+            border: 1px solid #000;
+            margin-right: 6px;
+            margin-bottom: 2px;
+            padding-left: 5px;
+        }
+
+        .cell h1 {
+            font-size: 16px;
+            font-weight: normal;
+            z-index:3;
+            position:relative;
+            background-color: #fff;
+            margin: 0 25px;
+            padding: 0 15px;
+            top:-10px;
+        }
+
+        img {
+            float:left;
+            margin-right: 5px;
+        }
+
+        div:not(:last-of-type) {
+            margin-top: 9px;
+        }
+
+        .cell div:last-of-type {
+            margin-top: -17px;
+        }
+
+        aside {
+            float:left;
+            margin: 55px 10px 0 10px;
+        }
+
+        aside li {
+            margin-bottom: 20px;
+        }
+
+        aside li input {
+            margin-top: 10px;
+        }

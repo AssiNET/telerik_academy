@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calculator</title>
+    <style>
+        body, section, header, ul, li, div, label, button {
+            margin :0;
+            padding: 0;
+        } 
+
+        #outter-container {
+            background-color: #6BADF6;
+            font-family: 'Segoe UI';
+            width: 417px;
+            height:387px;
+            margin: 20px auto 0 auto;
+        }
+
+        .blue-border {
+            border: 1px solid #5284BC;
+        }
+
+        .header h1 {
+            font-weight: normal;
+            font-size: 16px;
+            text-align:center;
+            line-height:16px;
+            padding-top:0;
+            margin:5px auto 5px auto;
+            width: 70px;
+        }
+
+        #inner-container {
+            padding: 0;
+            margin: 0 6px 6px 6px;
+            height: 332px;
+            background: #edf4fc; /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZjRmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIzJSIgc3RvcC1jb2xvcj0iI2RkZTdmMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkOWU0ZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top,  #edf4fc 0%, #dde7f3 23%, #d9e4f1 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#edf4fc), color-stop(23%,#dde7f3), color-stop(100%,#d9e4f1)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #edf4fc 0%,#dde7f3 23%,#d9e4f1 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #edf4fc 0%,#dde7f3 23%,#d9e4f1 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #edf4fc 0%,#dde7f3 23%,#d9e4f1 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #edf4fc 0%,#dde7f3 23%,#d9e4f1 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4fc', endColorstr='#d9e4f1',GradientType=0 ); /* IE6-8 */
+        }
+
+        #inner-container.blue-border {
+            border-top: 0;
+        }
+
+        nav {
+            background-color: #F5F6F7;
+            margin: 8px 6px 0 6px;
+        }
+        nav.blue-border {
+            border-top: 1px solid #5284BC;
+            border-left: 1px solid #5284BC;
+            border-right: 1px solid #5284BC;
+            border-bottom: 1px solid #E8E9EA;
+        }
+
+        nav ul#menu {
+            padding:0;
+            margin:-3px 0 -1px 0;
+        }
+
+        nav ul#menu li {
+            margin:0;
+            padding:2px 8px 0 5px;
+            list-style-type:none;
+            display: inline;
+            border: 1px solid #F5F6F7;
+            font-size: 11px;
+        }
+
+        nav ul#menu li:hover {
+            border: 1px solid #5B93D1;
+            background-color: #D5E7F8;
+        }
+
+        nav ul#menu li:first-child {
+            margin-right: -4px;
+        }
+
+        nav ul#menu li:last-child {
+            margin-left: -4px;
+        }
+
+    </style>
+    <!--[if gte IE 9]>
+        <style type="text/css">
+            .gradient {
+                filter: none;
+            }
+        </style>
+    <![endif]-->
+</head>
+<body>
+    <section id="outter-container" class="blue-border">
+        <header class="header">
+            <h1>Calculator</h1>
+            <nav class="blue-border">
+            <ul id="menu">
+                <li>View</li>
+                <li>Edit</li>
+                <li>Help</li>
+            </ul>
+            </nav> 
+        </header>
+        <section id="inner-container" class="blue-border gradient">
+        <!--    <section id="display">
+                <div class="inner-shadow">
+
+                </div>
+            </section>
+            <section>
+                <div>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <ul>
+                    <li><label></label></li>
+                    <li><label></label></li>
+                    <li><label></label></li>
+                    <li><label></label></li>
+                </ul>
+                <ul>
+                    <li><label></label></li>
+                    <li><label></label></li>
+                    <li><label></label></li>
+                    <li><label></label></li>
+                </ul>
+            </section>
+            <section>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </section>-->
+        </section>
+    </section>
+</body>
+</html>

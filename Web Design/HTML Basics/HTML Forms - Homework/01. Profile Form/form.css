@@ -1,0 +1,80 @@
+﻿body{
+    margin:0;
+    padding:0;
+    font: 100% normal verdana;
+    background: #fff;
+}
+
+table, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 600px;
+    position:relative;
+    margin: 5px auto;
+    padding: 0;
+    border-collapse:collapse;
+    font: 12px verdana;
+}
+
+table td {
+    margin:0;
+    padding:5px;
+    
+}
+
+table td.label {
+    text-align:right;
+    font-weight: bold;
+}
+
+table td input#lname, input#fname, textarea#address, select#country, input#email, textarea#comments {
+    width: 260px;
+}
+
+table td textarea#address, textarea#comments {
+    height: 85px;
+    max-height:120px;
+    max-width: 300px;
+}
+
+table td input#city {
+    width:200px;
+}
+
+table td input#state {
+    width: 100px;
+}
+
+table td input#zip {
+    width: 75px;
+}
+
+table td input#countrycode {
+    width: 60px;
+}
+
+table td input#areacode {
+    width: 55px;
+}
+
+table td input#number {
+    width: 120px;
+}
+
+table td input#month, input#day {
+    width: 25px;
+}
+
+table td input#year {
+    width: 35px;
+}
+
+table td select#gender {
+    width: 75px;
+}
+
+table td#buttons {
+    text-align:center;
+}

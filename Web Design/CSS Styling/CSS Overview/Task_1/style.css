@@ -1,0 +1,75 @@
+table {
+	background-color: #595959;
+	font-family: Arial, sans-serif;
+	width: 450px;
+}
+
+td, th {
+	text-align: left;
+	padding: 5px;
+}
+
+th {
+	font-weight: normal;
+}
+
+.label {
+	font-size: 14px;
+	font-style: italic;
+	color: #DCDBDC;
+    width: 120px;
+}
+
+.value {
+    font-size: 14px;
+	width: 320px;
+	color: #AFB1A4;
+    padding-left:0;
+}
+
+#title {
+	font-size: 20px;
+	color: #AFB1A4;
+}
+
+#redMessage {
+    padding-top: 0;
+    padding-bottom: 5px;
+	color: red;
+    font-weight:bold;
+    font-size: 14px;
+}
+
+#link, #email,  #name  {
+	color: #E3D59C;
+}
+
+#link, #redMessage {
+    padding-left: 132px;
+}
+
+tfoot tr td {
+    color: #C06925;
+}
+
+#circleFig {
+    font-size:10px;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    background-color: #71b47a;
+}
+
+#name {
+    padding:0;
+}
+
+#circle {
+    width: 13px;
+    padding:0;
+    padding-bottom: 8px;
+}
+
+#status {
+	color: orange;
+}

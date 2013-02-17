@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Profile Form</title>
+    <link href="form.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <td class="label">
+                    <label for="lname">Last Name</label>
+                </td>
+                <td colspan="3">
+                    <input type="text" name="lname" id="lname" maxlength="32" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label for="fname">First name</label>
+                </td>
+                <td colspan="3">
+                    <input type="text" name="fname" id="fname" maxlength="32" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label>Address</label>
+                </td>
+                <td colspan="3">
+                    <textarea name="address" id="address" maxlength="100"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label for="city">City</label>
+                </td>
+                <td>
+                    <input type="text" name="city" id="city" maxlength="32"/>
+                </td>
+                <td class="label">
+                    <label for="state">State</label>
+                </td>
+                <td>
+                    <input type="text" name="state" id="state"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label for="zip">Zip/Postal Code</label>
+                </td>
+                <td colspan="3">
+                    <input type="text" name="zip" id="zip"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label for="country">Country</label>
+                </td>
+                <td colspan="3">
+                    <select name="country" id="country">
+                        <option value="BG">Bulgaria</option>
+                        <option value="US">US</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label>Phone (country code, area code, number)</label>
+                </td>
+                <td colspan="3">
+                    (+ <input type="text" name="countrycode" id="countrycode" maxlength="3"/> )
+                      <input type="text" name="areacode" id="areacode" maxlength="2"/>
+                      <input type="text" name="number" id="number" maxlength="7"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label for="email">Email</label>
+                </td>
+                <td colspan="3">
+                    <input type="email" name="email" id="email"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label>Birthdate</label>
+                </td>
+                <td colspan="3">
+                    <label for="month">Month</label>
+                    <input type="text" name="birthdate" id="month" maxlength="2"/>
+
+                    <label for="day">Day</label>
+                    <input type="text" name="birthdate" id="day" maxlength="2"/>
+                    
+                    <label for="year">Year(4 digits)</label>
+                    <input type="text" name="birthdate" id="year" maxlength="4"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label for="gender">Gender</label>
+                </td>
+                <td colspan="3">
+                    <select name="gender" id="gender">
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label>Starting date</label>
+                </td>
+                <td colspan="3">
+                    <input class="startdate" type="radio" name="startdate" id="firstdate" value="Spring 2006"/>
+                    <label for="firstdate">Spring 2006</label>
+                    
+                    <input class="startdate" type="radio" name="startdate" id="seconddate" value="Summer 2006"/>
+                    <label for="seconddate">Summer 2006</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">
+                    <label>Comments/Questions</label>
+                </td>
+                <td colspan="3">
+                    <textarea id="comments" name="comments" maxlength="100"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td id="buttons" colspan="4">
+                    <input type="submit" name="submit" value="Submit"/>
+                    <input type="reset" name="reset" value="Clear Form"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

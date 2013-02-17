@@ -1,0 +1,11 @@
+ul.hyphen-list 
+{
+	list-style-type: none;
+	margin-top: 0;
+	padding-left: 0;
+}
+	
+ul.hyphen-list li:before 
+{
+	content: "- ";
+}

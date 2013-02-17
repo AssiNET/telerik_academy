@@ -1,0 +1,26 @@
+﻿body
+{
+    margin:0;
+    padding:25px;
+    background-color:grey;
+}
+
+table {
+    border-radius:10px;
+}
+
+td {
+   padding: 10px;
+}
+table, th, td, tr {    
+    background-color: #fff;
+}
+
+th {
+    font-style:italic;    
+}
+
+#text{
+    width: 250px;
+    text-align: justify;
+}

@@ -1,0 +1,172 @@
+﻿form {
+    margin: 0 auto;
+    width: 1050px;
+}
+
+table {
+    border-spacing: 0;
+    font: 12px arial; 
+}
+
+table tr th {
+    background: #eeeff1;
+    border-top: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    text-align: left;
+    padding: 5px;
+    font-weight: normal;
+}
+
+table tr th:first-child {
+    border-left: 1px solid #bbb;
+}
+
+table tr:last-child th {
+    border-bottom: 1px solid #bbb;
+}
+
+table tr td {
+    background: #ffffff;
+    border-top: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    text-align: left;
+    padding: 5px;
+}
+
+table tr td:first-child {
+    border-left: 1px solid #bbb;
+}
+
+table tr:first-child td {
+    border-top:0;
+}
+
+table tr:last-child td {
+    border-bottom:1px solid #bbb;
+}
+
+table tfoot tr td {
+    background-color: #e2e6ea;
+    border-bottom:1px solid #bbb;
+}
+
+/* top-left border-radius */
+table tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+}
+
+/* top-right border-radius */
+table tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+}
+
+/* bottom-left border-radius */
+table tfoot tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+
+/* bottom-right border-radius */
+table tfoot tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+.search {
+    background-image:url(../images/search.png);
+    background-color:transparent;
+    border:none;
+    width: 19px;
+    height: 19px;
+	color: transparent;
+}
+
+.search:active {
+    background-image:url(../images/search-active.png);
+    background-color:transparent;
+    border:none;
+    width: 19px;
+    height: 19px;
+}
+
+#previous:active {
+    background:url(../images/back-active.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+}
+
+#previous {
+    background:url(../images/back.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+	color: transparent;
+}
+
+#backward:active {
+    background:url(../images/backward-active.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+}
+
+#backward {
+    background:url(../images/backward.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+	color: transparent;
+}
+
+#next:active {
+    background:url(../images/next-active.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+}
+
+#next {
+    background:url(../images/next.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+	color: transparent;
+}
+
+#forward:active {
+    background:url(../images/forward-active.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+}
+
+#forward {
+    background:url(../images/forward.png) no-repeat;
+    background-color:transparent;
+    border:none;
+    width: 24px;
+    height: 24px;
+	color: transparent;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+
+#page {
+    margin-left:20px;
+}
+
+#result {
+    float:right;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding:0;
+}

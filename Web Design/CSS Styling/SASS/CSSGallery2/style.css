@@ -1,0 +1,20 @@
+body, section, form, ul, li, img, label {
+  margin: 0;
+  padding: 0; }
+
+:target {
+  position: absolute;
+  display: block;
+  left: 40px; }
+
+body section {
+  margin: 20px 40px; }
+  body section ul {
+    list-style-type: none; }
+    body section ul > li {
+      display: inline-block; }
+      body section ul > li ul {
+        display: none; }
+      body section ul > li a {
+        text-decoration: none; }
+

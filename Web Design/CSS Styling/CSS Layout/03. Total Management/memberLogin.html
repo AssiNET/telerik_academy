@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Login</title>
+    <style>
+        section, form, fieldset, legend, input, header {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            margin-left: auto;
+            margin-right: auto;
+            width: 660px;
+            /*height: 297px;*/
+            background-color: #3b3b3b;
+            border: 1px solid #806850;
+            border-radius: 5px;
+            font-family: Cambria, serif;
+            
+        }
+
+        #main-header {
+            background: #3b3b3b;
+            background: url(images/monitor1.png) no-repeat content-box;
+            background: url(images/monitor1.png) no-repeat content-box, -webkit-gradient(bottom, #262626, #3b3b3b);
+            background: url(images/monitor1.png) no-repeat content-box, -webkit-linear-gradient(bottom, #262626, #3b3b3b);
+            background: url(images/monitor1.png) no-repeat content-box, -moz-linear-gradient(bottom, #262626, #3b3b3b);
+            background: url(images/monitor1.png) no-repeat content-box, -ms-linear-gradient(bottom, #262626, #3b3b3b);
+            background: url(images/monitor1.png) no-repeat content-box, -o-linear-gradient(bottom, #262626, #3b3b3b);
+            background: url(images/monitor1.png) no-repeat content-box, linear-gradient(bottom, #262626, #3b3b3b);
+            padding: 5px 15px 12px 10px;
+            -webkit-box-shadow: inset #262626 0 -2px 0 0;
+            box-shadow: inset #262626 0 -2px 0 0;
+            border:none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        fieldset {
+            margin-left: 70px;
+            margin-top: 10px;
+            padding-bottom: 15px;
+            border:none;
+        }
+        
+        fieldset input {
+            margin-top: -5px;
+        }
+
+        fieldset input:first-of-type {
+            margin-left: 10px;
+            margin-right: 15px;
+        }
+
+        fieldset input:last-of-type {
+            margin-left: 15px;
+        }
+
+        fieldset input[type='text']{
+            border: 1px solid #819db3;
+            height: 22px;
+            width: 150px;
+        }
+        
+        legend {
+            padding-right: 5px;
+            float:left;
+            color: #fff;
+            font-weight:bold;
+            font-size: 16px;
+        }
+
+       fieldset input[type='button']{
+           height: 28px;
+           width: 56px;
+           background: #f3090a;
+           color: #fff;
+           border: 2px solid #fff;
+           border-radius: 12px;
+           -webkit-box-shadow: inset #ca0300 0 0 0 1px, #262626 1px 1px 1px 0;
+            box-shadow: inset #ca0300 0 0 0 1px, #262626 1px 1px 1px 0;
+            z-index:0;
+            position:absolute;
+       }
+
+       span {
+           position:absolute;
+           z-index: 3;
+           border-top-left-radius: 2px;
+           border-bottom-left-radius: 8px;
+           border-bottom-right-radius: 8px;
+           top: 22px;
+           margin-left: 22px;
+           margin-top: 0;
+           width: 40px;
+           height:13px;
+           /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.01) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0.01))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.01) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.01) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.01) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.01) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#03ffffff',GradientType=0 ); /* IE6-8 */
+            opacity:0.6;
+       }
+
+       .article-header h1 {
+           color: #f5d21e;
+           padding-left: 15px;
+       }
+
+       article p {
+           margin-left: 10px;
+           margin-right: 80px;
+           color: #a7a7a7;
+           font-family: Calibri;
+           font-size: 15px;
+           
+       }
+
+       strong {
+           font-weight:normal;
+           color: #fff;
+       }
+
+    </style>
+</head>
+<body>
+    <section id="box">
+        <header id="main-header">
+            <form action="/" method="post">
+                <fieldset>
+                    <legend>members login:</legend>
+                    <input type="text" />
+                    <input type="text" />
+                    <input type="button" value="GO"/>
+                    <span>&nbsp;</span>
+                </fieldset>
+            </form>
+        </header>
+        <article>
+            <header class="article-header">
+                <h1>about total management?</h1>
+            </header>
+            <p>
+                Total Management is a free, tableless, W3C-compliant web design layout by Template World. This template has been tested and proven compatible with all major browser environments and operating systems. You are free to modify the design to suit your tastes in any way you like.<br />We only ask you to not remove <strong>"Design by Template World"</strong> and the link http://www.templateworld.com from the footer of the template.<br /> If you are interested in seeing more of our free web template designs feel free to visit our website, Template World. We inted to add at least 25 new free templates in the coming month.
+            </p>
+        </article>
+    </section>
+</body>
+</html>

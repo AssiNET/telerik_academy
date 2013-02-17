@@ -1,0 +1,30 @@
+body, section, form, ul, li, img, label {
+  margin: 0;
+  padding: 0; }
+
+body section {
+  margin: 20px 40px; }
+  body section form ul {
+    list-style-type: none; }
+    body section form ul li {
+      display: inline-block; }
+  body section form input[type="radio"] {
+    display: none; }
+  body section form input[type="radio"]:checked + label span {
+    display: block;
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat; }
+  body section form input[type="radio"]:checked + label #pic1 {
+    background-image: url("images/pic1.jpg"); }
+  body section form input[type="radio"]:checked + label #pic2 {
+    background-image: url("images/pic2.jpg"); }
+  body section form input[type="radio"]:checked + label #pic3 {
+    background-image: url("images/pic3.jpg"); }
+  body section form input[type="radio"]:checked + label #pic4 {
+    background-image: url("images/pic4.jpg"); }
+  body section form input[type="radio"]:checked + label #pic5 {
+    background-image: url("images/pic5.jpg"); }
+  body section form input[type="radio"]:checked + label #pic6 {
+    background-image: url("images/pic6.jpg"); }
+

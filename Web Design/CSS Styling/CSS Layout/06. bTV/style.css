@@ -1,0 +1,110 @@
+.clearfix {
+            -ms-zoom: 1;
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content:"";
+            clear:both;
+            height:0;
+            display:block;
+        }
+
+        body, section, ul, li, a {
+            padding:0;
+            margin:0;
+        }
+
+        body {
+            font-family: Verdana;
+            color: #8da8ac;
+        }
+
+        header {
+            margin-bottom: 10px;
+        }
+            #wrapper {
+                width: 687px;
+                margin: 10px auto;
+                padding:10px;
+                background-color: #1e3741;
+                border: 1px solid #337d8f;
+                border-radius: 5px;
+            }
+
+        ul li a {
+            text-decoration: none;
+            color: #8da8ac;
+            font-size: 12px;
+            font-weight:bold;
+        }
+
+        #navigation ul {
+            display:inline-block;
+            list-style-type:none;
+            background-color: #4b5f67;
+        }
+
+            #navigation ul li {
+                display:inline-block;
+                padding: 10px 0;   
+                border-right: 1px solid #1e3741;
+            }
+
+            #navigation ul li:not(:first-of-type) {
+                margin-left: -6px;
+            }
+
+            #navigation ul li:last-of-type {
+                border:none;
+            }
+
+            #navigation ul li a {
+                padding:10px 10px;
+            }
+            
+            #navigation ul li a:hover {
+                text-decoration:underline;
+            }
+
+        #news {
+            float:left;
+            width: 265px;
+            font-size: 12px;
+            font-weight:bold;
+        }
+
+            #news ul {
+                list-style-type:none;
+            }
+
+            #news ul li {
+                padding: 10px 20px 10px 10px;
+                margin: 0 0 0 -10px;
+                border-bottom: 1px solid #304650;
+            }
+
+            #news ul li:last-of-type {
+                border-bottom:none;
+            }
+
+            #news ul li:hover {
+                background-color: #00968c;
+            }
+
+                #news ul li a {
+                    padding: 10px 0;
+                }
+
+                #news ul li a:hover {
+                    color: #fff;
+                }
+
+         #media {
+             float:left;
+         }  
+
+         .selected {
+             background-color: #1e3741;
+             color: #fff;
+         }
