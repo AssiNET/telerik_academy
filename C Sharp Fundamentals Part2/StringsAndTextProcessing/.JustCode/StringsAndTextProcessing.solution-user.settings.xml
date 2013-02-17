@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="108554a9-613d-4491-9a73-d1db229828ce">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings>
+      <FilePath>
+        <Path>E:\Telerik Academy 2012-2013\C# Fundamentals Part 2\09. Strings And Text Processing\Homework\StringsAndTextProcessing\ChangeTextToUpper\ChangeTextToUpper.cs</Path>
+        <ProjectFullName>E:\Telerik Academy 2012-2013\C# Fundamentals Part 2\09. Strings And Text Processing\Homework\StringsAndTextProcessing\ChangeTextToUpper\ChangeTextToUpper.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>27</Column>
+          <Text>There already is another variable named &lt;/C&gt;newText&lt;//C&gt;</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>13</Column>
+          <Text>Use 'var'</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>13</Column>
+          <Text>Use 'var'</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>27</Column>
+          <Text>Split declaration and initialization</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>27</Column>
+          <Text>Move to outer scope</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>27</Column>
+          <Text>Variable &lt;/C&gt;newText&lt;//C&gt; is only assigned to</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>

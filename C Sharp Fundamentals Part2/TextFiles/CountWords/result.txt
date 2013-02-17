@@ -1,0 +1,10 @@
+Five - 5
+Six - 5
+One - 4
+Two - 4
+Three - 4
+Seven - 1
+Eight - 1
+Nine - 1
+Four - 0
+Ten - 0
