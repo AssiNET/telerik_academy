@@ -18,20 +18,22 @@ namespace GenericList
 
             // Iterate through the elements
             Console.WriteLine("Elements before removing the element at index:{0}", 0);
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i]);
+            //}
+            Console.WriteLine(list);
             
             // Remove element at position
             list.RemoveAt(0);
 
             // Iterate through elements
             Console.WriteLine("\nElements after removing the element at index:{0}", 0);
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i]);
+            //}
+            Console.WriteLine(list);
 
             // Retrieve the min between two elements
             Console.WriteLine("\nMin element between elements {0} and {1}", 0, 1);

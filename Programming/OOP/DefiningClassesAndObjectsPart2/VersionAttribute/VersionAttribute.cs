@@ -6,8 +6,46 @@ using System.Threading.Tasks;
 
 namespace VersionAttribute
 {
-    class VersionAttribute
+    [AttributeUsage(AttributeTargets.Struct | AttributeTargets.Class | 
+        AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Enum)]
+    class VersionAttribute : System.Attribute
     {
-        //TODO:
+        private int majorVersion;
+        private int minorVersion;
+
+        public int MajorVersion
+        {
+            get
+            {
+                return this.majorVersion;
+            }
+            private set
+            {
+                this.majorVersion = value;
+            }
+        }
+
+        public int MinorVersion
+        {
+            get
+            {
+                return this.minorVersion;
+            }
+            private set
+            {
+                this.minorVersion = value;
+            }
+        }
+                
+        public VersionAttribute(int majorVersion, int minorVersion)
+        {
+            this.MajorVersion = majorVersion;
+            this.MinorVersion = minorVersion;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0}.{1}", MajorVersion, MinorVersion);
+        }
     }
 }

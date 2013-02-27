@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace GenericList
 {
     class GenericList<T>
-        //where T : IComparable<T>
     {
         // Declaring Fields
         private T[] list;
@@ -116,17 +115,30 @@ namespace GenericList
             T element = list[index];
             Array.Copy(list, index + 1, list, index, count - index + 1);
 
-            if (element.GetType().IsPrimitive)
-            {
-                list[count - 1] = (dynamic)0;    
-            }
-            else
-            {
-                list[count - 1] = (dynamic)null;
-            }
+            //if (element.GetType().IsPrimitive)
+            //{
+            //    list[count - 1] = (dynamic)0;    
+            //}
+            //else
+            //{
+            //    list[count - 1] = (dynamic)null;
+            //}
+
+            list[count - 1] = default(T);
 
             count--;
             return element;
+        }
+
+        public T[] ToArray()
+        {
+            T[] array = new T[this.Count];
+            for (int i = 0; i < this.Count; i++)
+            {
+                array[i] = list[i];
+            }
+
+            return array;
         }
 
         // Erasing all elements from the list
@@ -159,8 +171,7 @@ namespace GenericList
         // Overrided ToString() method
         public override string ToString()
         {
-            // TODO:
-            return "";
+            return String.Join(", ", this.ToArray());
         }
     }
 }
