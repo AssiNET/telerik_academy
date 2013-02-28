@@ -96,11 +96,10 @@ namespace GenericList
                 doubledList = new T[list.Length * 2];
             }
 
-            Array.Copy(list, doubledList, index);
+            Array.Copy(list, doubledList, index);   // Copying elements in interval [o, index) to the new array [0, index]
             count++;
-            Array.Copy(list, index, doubledList, index + 1, count - index - 1);
-
-            doubledList[index] = element;
+            Array.Copy(list, index, doubledList, index + 1, count - index - 1); // Copying elements in interval from position 'index' to the new array at position 'index + 1'
+            doubledList[index] = element; // insert new the element at position 'index'
             list = doubledList;
         }
 
