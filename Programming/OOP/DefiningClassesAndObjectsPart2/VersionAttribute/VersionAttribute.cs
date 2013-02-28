@@ -26,7 +26,7 @@ namespace VersionAttribute
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Major version has to be positive number.");
+                    throw new ArgumentException("Major version has to be positive number." + value);
                 }
                 this.majorVersion = value;
             }
