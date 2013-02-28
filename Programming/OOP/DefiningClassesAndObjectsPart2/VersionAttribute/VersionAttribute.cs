@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace VersionAttribute
 {
-    [AttributeUsage(AttributeTargets.Struct | AttributeTargets.Class | 
-        AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Enum)]
+    [AttributeUsage(AttributeTargets.Struct | 
+                    AttributeTargets.Class | 
+                    AttributeTargets.Interface | 
+                    AttributeTargets.Method | 
+                    AttributeTargets.Enum)]
     class VersionAttribute : System.Attribute
     {
         private int majorVersion;
@@ -21,6 +24,10 @@ namespace VersionAttribute
             }
             private set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Major version has to be positive number.");
+                }
                 this.majorVersion = value;
             }
         }
@@ -33,6 +40,10 @@ namespace VersionAttribute
             }
             private set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Minor version has to be positive number." + value);
+                }
                 this.minorVersion = value;
             }
         }

@@ -11,11 +11,18 @@ namespace VersionAttribute
     {
         static void Main(string[] args)
         {
-            Type type = typeof(VersionAttributeTest);
-            object[] allAttributes = type.GetCustomAttributes(false);
-            foreach (VersionAttribute versionAttribute in allAttributes)
+            try
             {
-                Console.WriteLine("The version of the class is {0} ", versionAttribute);
+                Type type = typeof(VersionAttributeTest);
+                object[] allAttributes = type.GetCustomAttributes(false);
+                foreach (VersionAttribute versionAttribute in allAttributes)
+                {
+                    Console.WriteLine("The version of the class is {0} ", versionAttribute);
+                }
+            }
+            catch (ArgumentException ae)
+            {
+                Console.WriteLine(ae.Message);
             }
         }
     }
