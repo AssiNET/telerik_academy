@@ -96,10 +96,11 @@ namespace GenericList
                 doubledList = new T[list.Length * 2];
             }
 
-            Array.Copy(list, doubledList, index);   // Copying elements in interval [o, index) to the new array [0, index]
+            Array.Copy(list, doubledList, index);
             count++;
-            Array.Copy(list, index, doubledList, index + 1, count - index - 1); // Copying elements in interval from position 'index' to the new array at position 'index + 1'
-            doubledList[index] = element; // insert new the element at position 'index'
+            Array.Copy(list, index, doubledList, index + 1, count - index - 1);
+
+            doubledList[index] = element;
             list = doubledList;
         }
 
@@ -148,23 +149,41 @@ namespace GenericList
         }
 
         // Retrieve the min between two elements
-        public static T Min<T>(T first, T second)
+        public static T Min<T>(GenericList<T> list)
             where T : IComparable<T>
         {
-            if (first.CompareTo(second) <= 0)
-                return first;
-            else
-                return second;
+            T min = list[0];
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (min.CompareTo(list[i]) > 0)
+                {
+                    min = list[i];
+                }
+            }
+            //if (first.CompareTo(second) <= 0)
+            //    return first;
+            //else
+            //    return second;
+            return min;
         }
 
         // Retrieve the max between two elements
-        public static T Max<T>(T first, T second)
+        public static T Max<T>(GenericList<T> list)
             where T : IComparable<T>
         {
-            if (first.CompareTo(second) <= 0)
-                return second;
-            else
-                return first;
+            T max = list[0];
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (max.CompareTo(list[i]) <= 0)
+                {
+                    max = list[i];
+                }
+            }
+            //if (first.CompareTo(second) <= 0)
+            //    return second;
+            //else
+            //    return first;
+            return max;
         }
 
         // Overrided ToString() method

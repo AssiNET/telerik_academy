@@ -35,13 +35,13 @@ namespace GenericList
             //}
             Console.WriteLine(list);
 
-            // Retrieve the min between two elements
-            Console.WriteLine("\nMin element between elements {0} and {1}", 0, 1);
-            Console.WriteLine(GenericList<int>.Min<int>(list[0], list[1]));
+            // Retrieve the min element in the list
+            Console.Write("\nMin element in the list: ");
+            Console.WriteLine(GenericList<int>.Min<int>(list));
 
-            // Retrieve the max between two elements
-            Console.WriteLine("\nMax element between elements {0} and {1}", 0, 1);
-            Console.WriteLine(GenericList<int>.Max<int>(list[0], list[1]));
+            // Retrieve the max element in the list
+            Console.Write("\nMax element in the list: ");
+            Console.WriteLine(GenericList<int>.Max<int>(list));
 
             // Clearing the list
             list.ClearList();
