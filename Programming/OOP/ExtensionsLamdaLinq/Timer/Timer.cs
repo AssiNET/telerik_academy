@@ -7,22 +7,33 @@ using System.Threading.Tasks;
 
 namespace Timer
 {
-    public delegate void TimerDelegate(int timeInterval);
+    // Delegate
+    public delegate void TimerDelegate();
 
+    // class Timer
     class Timer
     {
-        public static void SayHello(int timeInterval)
+        // Method which will be attached to the delegate 
+        private void SayHello()
         {
-            while (true)
-            {
-                Console.WriteLine("Hello! I am timer.");
-                Thread.Sleep(timeInterval);   
-            }
+            Console.WriteLine("Hello! I am timer.");
         }
 
         public void Sleep(int timeInterval)
         {
             Thread.Sleep(timeInterval);
+        }
+
+        // Method where the delegateTimer will be execute at each timeInterval
+        public void ExecuteMethod(int timeInterval)
+        {
+            TimerDelegate delegateTimer = this.SayHello;
+
+            while (true)
+            {
+                delegateTimer();
+                Thread.Sleep(timeInterval);    // Sleeping the execution of the thread
+            }
         }
     }
 }

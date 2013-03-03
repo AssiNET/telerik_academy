@@ -9,11 +9,10 @@ namespace Timer
 {
     class TimerTest
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            TimerDelegate timerDelegate = new TimerDelegate(Timer.SayHello);
-
-            timerDelegate(2000);
+            Timer timer = new Timer();
+            timer.ExecuteMethod(2000); // time interval: 2 seconds
         }
     }
 }
